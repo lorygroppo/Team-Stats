@@ -23,10 +23,12 @@ def LoadStats(fileToRead):
         return
     info = f.readline().strip().split(",") #legge la prima riga contenente le informazioni della partita
     match = {
-        "PARTITA" : info[0],
-        "DATA" : info[3],
-        "CAMPIONATO" : info[1],
-        "STAGIONE" : info[2]
+        "INFO" : {
+            "PARTITA" : info[0],
+            "DATA" : info[3],
+            "CAMPIONATO" : info[1],
+            "STAGIONE" : info[2]
+        }
     }
     fields = f.readline().strip().split(",") #prelevo i nomi dei campi dalla seconda riga
 
