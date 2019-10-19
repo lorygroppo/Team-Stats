@@ -31,7 +31,7 @@ def PrintTable(match):
         line_color='darkslategray',
         # 2-D list of colors for alternating rows
         fill_color = [[rowOddColor,rowEvenColor,rowOddColor, rowEvenColor,rowOddColor]*5],
-        align = ['left', 'center'],
+        align = ['right','left', 'right'],
         font = dict(color = 'darkslategray', size = 11)
         ))
     ])

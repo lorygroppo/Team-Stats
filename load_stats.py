@@ -41,10 +41,15 @@ def LoadStats(fileToRead):
         if (len(value) == len(fields)):
             for i in range(len(value)):
                 giocatore[fields[i]] = value[i]
+            giocatore["%T2"] = '{:3.1f}'.format(int(giocatore["T2R"])*100/int(giocatore["T2T"]))
+            giocatore["%T3"] = '{:3.1f}'.format(int(giocatore["T3R"])*100/int(giocatore["T3T"]))
+            giocatore["%TL"] = '{:3.1f}'.format(int(giocatore["TLR"])*100/int(giocatore["TLT"]))
+            giocatore["RT"] = int(giocatore["RD"]) + int(giocatore["RO"])
             try: 
                 giocatore.pop("NOME")
                 nome = value[fields.index("NOME")]
                 match[nome] = giocatore
+                print(giocatore)
             except:
                 print("ERRORE: campo NOME non corretto")
                 return
